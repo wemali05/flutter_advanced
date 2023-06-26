@@ -53,7 +53,9 @@ class _QuizState extends State<Quiz> {
     }
 
     if (activeScreen == 'result-screen') {
-      screenWidget = const ResultScreen();
+      screenWidget = ResultScreen(
+        choosenAnswers: selectedAnswers,
+      );
     }
 
     return MaterialApp(
@@ -65,8 +67,7 @@ class _QuizState extends State<Quiz> {
                 Color.fromARGB(255, 42, 11, 97)
               ], begin: Alignment.topLeft, end: Alignment.topRight),
             ),
-            child: screenWidget
-            ),
+            child: screenWidget),
       ),
     );
   }
